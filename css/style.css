@@ -60,6 +60,7 @@ section {
 
 header {
   position: fixed;
+  background-color: lightgrey;
   top: 0px;
   height: 8vh;
   width: 100vw;
