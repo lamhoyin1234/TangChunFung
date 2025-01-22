@@ -96,12 +96,12 @@ window.addEventListener("DOMContentLoaded", async () => {
 //#endregion
 
 function scrollTo(id) {
-  if(document.getElementById(id).classList.contains("visible")){
-    $('html,body').animate({    scrollTop: $("#"+id).offset().top},    'slow');
-}
-else{
-  $('html,body').animate({    scrollTop: $("#"+id).offset().top-vh(10)},    'slow');
-}
+  if (document.getElementById(id).classList.contains("visible")) {
+    $('html,body').animate({ scrollTop: $("#" + id).offset().top }, 'slow');
+  }
+  else {
+    $('html,body').animate({ scrollTop: $("#" + id).offset().top - vh(10) }, 'slow');
+  }
 }
 
 async function scrollPageTo(id) {
