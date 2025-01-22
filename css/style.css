@@ -1,0 +1,162 @@
+:root {
+  --green: #00FF00;
+  --white: #FFFFFF;
+  --black: #000000;
+  --grey: #5e5e5e;
+  --timelineTranslateXValue: 10vh;
+}
+
+body,
+html,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+}
+
+section {
+  height: 100vh;
+}
+
+#first {
+  background-color: grey;
+}
+
+.timeline {
+  opacity: 0;
+  transform: translate(0, var(--timelineTranslateXValue));
+  transition: all 1s;
+}
+
+.timeline.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.yellow {
+  background-color: lightyellow;
+}
+
+#red {
+  background-color: lightcoral;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+.green {
+  background-color: lightgreen;
+}
+
+header {
+  position: fixed;
+  top: 0px;
+  height: 8vh;
+  width: 100vw;
+  z-index: 1000;
+}
+
+content{
+  /*margin-top: 30px;*/
+  /*height: 3000px;*/
+  margin-top: auto;
+  overflow: auto;
+}
+
+nav {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 1vw;
+  right: 50vw;
+  /*transform: translate(-50%, -50%);*/
+  display: flex;
+}
+
+/*lang button style*/
+  langList {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 70vw;
+    right: 1vw;
+    /*transform: translate(-50%, -50%);*/
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+  }
+
+  button {
+    background-color: transparent;
+    border:transparent;
+    a {
+      position: relative;
+      display: block;
+      text-transform: uppercase;
+      /*margin: 10px 0;*/
+      margin: 1rem 0;
+      /*padding: 10px 20px;*/
+      padding: 1rem 2rem;
+      text-decoration: none;
+      color: #262626;
+      font-family: sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: .5s;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-top: 2px solid #262626;
+        border-bottom: 2px solid #262626;
+        transform: scaleY(2);
+        opacity: 0;
+        transition: .3s;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #262626;
+        transform: scale(0);
+        opacity: 0;
+        transition: .3s;
+        z-index: -1;
+      }
+      &:hover {
+        color: #fff;
+        &:before {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+        &:after {
+          transform: scaleY(1);
+          opacity: 1;
+        }
+      }
+    }
+  }
+/*end lang button style*/

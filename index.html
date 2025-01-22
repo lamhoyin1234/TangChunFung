@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html button="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">	
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src='js/jquery.js'></script>
+  <script src="js/app.js"></script>
+  <noscript>You need to enable JavaScript to view the full site.</noscript>
+  <title data-i18n="title"></title>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <button onclick="scrollPageTo('first')">
+        <a data-i18n="homepage"></a>
+      </button>
+      <button onclick="scrollPageTo('red')">
+        <a>2</a>
+      </button>
+      <button>
+        <a>3</a>
+      </button>
+    </nav>
+      <langList>
+        <button onclick="changeLanguage('en')">
+          <a>English</a>
+        </button>
+        <button onclick="changeLanguage('zh')">
+          <a>中文</a>
+        </button>
+        <button onclick="changeLanguage('ja')">
+          <a>日本語</a>
+        </button>
+      </langList>
+  </header>
+  <content>
+    <section id="first">
+        <h1 data-i18n="title"></h1>
+        <p data-i18n="description"></p>
+    </section>
+    <section id="red" class="timeline">
+      <h1>foobar</h1>
+    </section>
+    <section class="timeline blue">
+      <h1>foobar</h1>
+    </section>
+    <section class="timeline green">
+      <h1>foobar</h1>
+    </section>
+  </content>
+
+</body>
+
+</html>
