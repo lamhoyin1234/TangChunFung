@@ -81,8 +81,8 @@ nav {
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 1em;
-  right: 50em;
+  left: 1vw;
+  right: 50vw;
   /*transform: translate(-50%, -50%);*/
   display: flex;
 }
@@ -96,8 +96,8 @@ langList {
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 70em;
-  right: 1em;
+  left: 70vw;
+  right: 1vw;
   /*transform: translate(-50%, -50%);*/
   display: flex;
   justify-content: flex-end;
