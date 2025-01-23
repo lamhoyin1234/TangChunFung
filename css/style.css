@@ -60,9 +60,8 @@ section {
 
 header {
   position: fixed;
-  background-color: lightgrey;
   top: 0px;
-  height: 8vh;
+  height: 5vh;
   width: 100vw;
   z-index: 1000;
 }
@@ -82,8 +81,8 @@ nav {
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 1vw;
-  right: 50vw;
+  left: 1em;
+  right: 50em;
   /*transform: translate(-50%, -50%);*/
   display: flex;
 }
@@ -97,8 +96,8 @@ langList {
   margin: 0;
   padding: 0;
   position: absolute;
-  left: 70vw;
-  right: 1vw;
+  left: 70em;
+  right: 1em;
   /*transform: translate(-50%, -50%);*/
   display: flex;
   justify-content: flex-end;
@@ -114,13 +113,13 @@ button {
     display: block;
     text-transform: uppercase;
     /*margin: 10px 0;*/
-    margin: 1rem 0;
+    margin: 1em 0;
     /*padding: 10px 20px;*/
-    padding: 1rem 2rem;
+    padding: 1em 2em;
     text-decoration: none;
     color: #262626;
     font-family: sans-serif;
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: 600;
     transition: .5s;
 
