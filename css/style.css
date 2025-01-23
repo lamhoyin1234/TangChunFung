@@ -61,7 +61,7 @@ section {
 header {
   position: fixed;
   top: 0px;
-  height: 5vh;
+  height: 7.5vh;
   width: 100vw;
   z-index: 1000;
 }
