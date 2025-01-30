@@ -1,12 +1,13 @@
 {
     "title":"In memories of Tang Chun Fung",
     "homepage":"Home",
+    "biography":"Biography",
     "homepageContent": "This is the homepage content",
     "welcome_message": "Welcome to Our Website!",
     "about_us": "Learn more about us...",
-    "footer_text": "© 2023 All rights reserved.",
     "name":"Tang Chun Fung",
     "born":"Born on 22 June 1995",
     "died":"Died on 22 Feb 2020",
-    "description":"His body was still not found until today."
+    "description":"His body was still not found until today.",
+    "footer_text": "© 2023 All rights reserved."
 }
