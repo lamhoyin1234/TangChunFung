@@ -34,7 +34,7 @@ section {
 .timeline {
   opacity: 0;
   transform: translate(0, var(--timelineTranslateXValue));
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 .timeline.visible {
