@@ -5,5 +5,8 @@
     "welcome_message": "Welcome to Our Website!",
     "about_us": "Learn more about us...",
     "footer_text": "© 2023 All rights reserved.",
-    "description":"Tang Chun Fung\nBorn on 22 June 1995\nDied on 22 Feb 2020\na 22-year-old student of the Hong Kong University of Science and Technology, was found dead in the sea near Sai Wan Ho on the morning of November 8, 2019. The cause of death is still unknown. The police are investigating the case. Tang Chun Fung was a student of the Department of Electronic and Computer Engineering at the Hong Kong University of Science and Technology. He was a member of the Hong Kong University of Science and Technology's Dragon Boat Team. He was also"
+    "name":"Tang Chun Fung",
+    "born":"Born on 22 June 1995",
+    "died":"Died on 22 Feb 2020",
+    "description":"His body was still not found until today."
 }
