@@ -27,7 +27,7 @@ section {
   height: 100vh;
 }
 
-#first {
+#homepage {
   background-color: grey;
 }
 
@@ -46,7 +46,7 @@ section {
   background-color: lightyellow;
 }
 
-#red {
+#biography {
   background-color: lightcoral;
 }
 
@@ -54,7 +54,7 @@ section {
   background-color: lightblue;
 }
 
-.green {
+#spirit_tablet {
   background-color: lightgreen;
 }
 

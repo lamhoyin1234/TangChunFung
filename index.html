@@ -18,14 +18,14 @@
 <body>
   <header>
     <nav>
-      <button onclick="scrollPageTo('first')">
+      <button onclick="scrollPageTo('homepage')">
         <a data-i18n="homepage"></a>
       </button>
-      <button onclick="scrollPageTo('red')">
+      <button onclick="scrollPageTo('biography')">
         <a data-i18n="biography"></a>
       </button>
-      <button>
-        <a>3</a>
+      <button onclick="scrollPageTo('spirit_tablet')">
+        <a data-i18n="spirit_tablet"></a>
       </button>
     </nav>
     <langList>
@@ -41,7 +41,7 @@
     </langList>
   </header>
   <content>
-    <section id="first">
+    <section id="homepage">
       <h1 data-i18n="title"></h1>
       <center><img src="img/icon.png"></center>
       <center>
@@ -57,13 +57,13 @@
         <p data-i18n="description"></p>
       </center>
     </section>
-    <section id="red" class="timeline">
+    <section id="biography" class="timeline">
       <h1>foobar</h1>
     </section>
     <section class="timeline blue">
       <h1>foobar</h1>
     </section>
-    <section class="timeline green">
+    <section id="spirit_tablet" class="timeline">
       <iframe src="unity/index.html" overflow:hidden; width="100%" height="100%" title="TangChunFung" scrolling="no" allowfullscreen="false";>
         Browser not compatible.
       </iframe>
