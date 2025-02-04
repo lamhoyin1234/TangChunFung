@@ -62,7 +62,6 @@ async function changeLanguage(lang) {
   await setLanguagePreference(lang);
   const langData = await fetchLanguageData(lang);
   updateContent(langData);
-  unityInstance.SendMessage('hook', 'ChangeLan', lang);
   //
   //optional: some lang had different orientation(read from right to left)
   //toggleArabicStylesheet(lang); // Toggle Arabic stylesheet
