@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <script src='js/jquery.js'></script>
-  <script src="js/app.js">var unityInstance = null;</script>
+  <script src="js/app.js"></script>
   <noscript>You need to enable JavaScript to view the full site.</noscript>
   <title data-i18n="title"></title>
 
@@ -28,7 +28,7 @@
       </button>
     </nav>
     <langList>
-      <button onclick="unityInstance.SendMessage('hook', 'ChangeLan', 'en');changeLanguage('en')">
+      <button onclick="changeLanguage('en')">
         <a>English</a>
       </button>
       <button onclick="changeLanguage('zh')">
@@ -81,7 +81,7 @@
           document.body.style.textAlign = "left";
         }
 
-        unityInstance=createUnityInstance(document.querySelector("#unity-canvas"), {
+        createUnityInstance(document.querySelector("#unity-canvas"), {
           arguments: [],
           dataUrl: "unity/Build/unity.data",
           frameworkUrl: "unity/Build/unity.framework.js",
