@@ -42,17 +42,11 @@
   <content>
     <section id="homepage">
       <h1 data-i18n="title"></h1>
-      <center><img src="img/icon.png"></center>
       <center>
+        <img src="img/icon.png">
         <h2 data-i18n="name"></h2>
-      </center>
-      <center>
         <h3 data-i18n="born"></h3>
-      </center>
-      <center>
         <h3 data-i18n="died"></h3>
-      </center>
-      <center>
         <p data-i18n="description"></p>
       </center>
     </section>
@@ -82,9 +76,9 @@
 
         createUnityInstance(document.querySelector("#unity-canvas"), {
           arguments: [],
-          dataUrl: "unity/Build/unity.data",
-          frameworkUrl: "unity/Build/unity.framework.js",
-          codeUrl: "unity/Build/unity.wasm",
+          dataUrl: "unity/Build/unity.data.gz",
+          frameworkUrl: "unity/Build/unity.framework.js.gz",
+          codeUrl: "unity/Build/unity.wasm.gz",
           streamingAssetsUrl: "unity/StreamingAssets",
           companyName: "DefaultCompany",
           productName: "TangChunFungTomb",
