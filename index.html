@@ -99,6 +99,7 @@
             productVersion: "{{{ PRODUCT_VERSION }}}",
           };
           createUnityInstance(canvas, config, (progress) => { /*...*/ }).then((unityInstance) => {
+            alert("Unity loaded successfully");
             MyGameInstance = unityInstance;
             MyGameInstance.SendMessage("firebase", "unityInstanceOK");
           }).catch((message) => {
