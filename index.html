@@ -93,7 +93,7 @@
           document.body.style.textAlign = "left";
         }
 
-        createUnityInstance(document.querySelector("#unity-canvas"), {
+        window.unityInstance=createUnityInstance(document.querySelector("#unity-canvas"), {
           arguments: [],
           dataUrl: "unity/Build/unity.data",
           frameworkUrl: "unity/Build/unity.framework.js",
