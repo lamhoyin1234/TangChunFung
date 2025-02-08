@@ -36,7 +36,7 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
-    
+
   </script>
   <header>
     <nav>
@@ -96,19 +96,25 @@
           canvas.style.position = "fixed";
           document.body.style.textAlign = "left";
         }
-
-        var gameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
-          arguments: [],
-          dataUrl: "unity/Build/unity.data",
-          frameworkUrl: "unity/Build/unity.framework.js",
-          codeUrl: "unity/Build/unity.wasm",
-          streamingAssetsUrl: "unity/StreamingAssets",
-          companyName: "DefaultCompany",
-          productName: "TangChunFungTomb",
-          productVersion: "1.0",
-          // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-          // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-        });
+        var MyGameInstance = null;
+        var buildUrl = "unity/Build/";
+        script.onload = () => {
+          var config = {
+            dataUrl: buildUrl + "unity.data",
+            frameworkUrl: buildUrl + "unity.framework.js",
+            codeUrl: buildUrl + "unity.wasm",
+            streamingAssetsUrl: "unity/StreamingAssets",
+            companyName: "DefaultCompany",
+            productName: "TangChunFungTomb",
+            productVersion: "1.0",
+          };
+          createUnityInstance(canvas, config, (progress) => { /*...*/ }).then((unityInstance) => {
+            MyGameInstance = unityInstance;
+            MyGameInstance.SendMessage("firebase", "unityInstanceOK");
+          }).catch((message) => {
+            alert(message);
+          });
+        };
       </script>
     </section>
   </content>
