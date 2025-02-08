@@ -98,15 +98,18 @@
         }
         var MyGameInstance = null;
         var buildUrl = "unity/Build/";
+        var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+        var script = document.createElement("script");
+        script.src = loaderUrl;
         script.onload = () => {
           var config = {
-            dataUrl: buildUrl + "unity.data",
-            frameworkUrl: buildUrl + "unity.framework.js",
-            codeUrl: buildUrl + "unity.wasm",
+            dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
+            frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
+            codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
             streamingAssetsUrl: "unity/StreamingAssets",
-            companyName: "DefaultCompany",
-            productName: "TangChunFungTomb",
-            productVersion: "1.0",
+            companyName: "{{{ COMPANY_NAME }}}",
+            productName: "{{{ PRODUCT_NAME }}}",
+            productVersion: "{{{ PRODUCT_VERSION }}}",
           };
           createUnityInstance(canvas, config, (progress) => { /*...*/ }).then((unityInstance) => {
             MyGameInstance = unityInstance;
