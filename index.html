@@ -83,13 +83,26 @@
       <canvas id="unity-canvas" width=100% height=100% tabindex="-1"
         style="width: 100%; height: 100%; background: #231F20"></canvas>
       <script>
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+          // Mobile device style: fill the whole browser client area with the game canvas:
+          var meta = document.createElement('meta');
+          meta.name = 'viewport';
+          meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+          document.getElementsByTagName('head')[0].appendChild(meta);
+
+          var canvas = document.querySelector("#unity-canvas");
+          canvas.style.width = "100%";
+          canvas.style.height = "100%";
+          canvas.style.position = "fixed";
+          document.body.style.textAlign = "left";
+        }
         var MyGameInstance = null;
         var buildUrl = "unity/Build/";
         var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
         var script = document.createElement("script");
         script.src = loaderUrl;
-        script.onload = () => {
-          var config = {
+        var gameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
+          arguments: [],
             dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
             frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
             codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
@@ -97,15 +110,9 @@
             companyName: "{{{ COMPANY_NAME }}}",
             productName: "{{{ PRODUCT_NAME }}}",
             productVersion: "{{{ PRODUCT_VERSION }}}",
-          };
-          createUnityInstance(canvas, config, (progress) => { /*...*/ }).then((unityInstance) => {
-            alert("Unity loaded successfully");
-            MyGameInstance = unityInstance;
-            MyGameInstance.SendMessage("firebase", "unityInstanceOK");
-          }).catch((message) => {
-            alert(message);
-          });
-        };
+          // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+          // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+        });
       </script>
     </section>
   </content>
