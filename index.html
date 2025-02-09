@@ -97,8 +97,9 @@
           document.body.style.textAlign = "left";
         }
         var MyGameInstance = null;
+        var buildUrl = "unity/Build/";
         var script = document.createElement("script");
-        script.src = loaderUrl;
+        script.src = buildUrl;
         var gameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
           arguments: [],
           dataUrl: "unity/Build/unity.data",
