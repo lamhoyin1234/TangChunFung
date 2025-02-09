@@ -111,7 +111,7 @@
           // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
           };
         var script = document.createElement("script");
-        script.src = loaderUrl;
+        script.src = "unity/Build/";
         script.onload = () => {
           createUnityInstance(canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
