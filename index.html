@@ -97,19 +97,17 @@
           document.body.style.textAlign = "left";
         }
         var MyGameInstance = null;
-        var buildUrl = "unity/Build/";
-        var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
         var script = document.createElement("script");
         script.src = loaderUrl;
         var gameInstance = createUnityInstance(document.querySelector("#unity-canvas"), {
           arguments: [],
-            dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
-            frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
-            codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
-            streamingAssetsUrl: "unity/StreamingAssets",
-            companyName: "{{{ COMPANY_NAME }}}",
-            productName: "{{{ PRODUCT_NAME }}}",
-            productVersion: "{{{ PRODUCT_VERSION }}}",
+          dataUrl: "unity/Build/unity.data",
+          frameworkUrl: "unity/Build/unity.framework.js",
+          codeUrl: "unity/Build/unity.wasm",
+          streamingAssetsUrl: "unity/StreamingAssets",
+          companyName: "DefaultCompany",
+          productName: "TangChunFungTomb",
+          productVersion: "1.0",
           // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
           // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
         });
