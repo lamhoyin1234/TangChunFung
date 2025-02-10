@@ -130,6 +130,7 @@
         script.src = "unity/Build/unity.loader.js";
         script.onload = () => {
           createUnityInstance(canvas, config, (progress) => {
+            progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
 
             // This is needed to make the Unity Firebase WebGL Library work properly
