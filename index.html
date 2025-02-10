@@ -121,7 +121,7 @@
           canvas.style.height = "100%";
         }
         loadingBar.style.display = "block";
-        
+
         var config = {
           dataUrl: "unity/Build/unity.data",
           frameworkUrl: "unity/Build/unity.framework.js",
@@ -139,10 +139,10 @@
           createUnityInstance(canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
-
             // This is needed to make the Unity Firebase WebGL Library work properly
             this.unityInstance = unityInstance;
             loadingBar.style.display = "none";
+            this.unityInstance.SendMessage(firebase, unityInstanceOK);
           }).catch((message) => {
             alert(message);
           });
