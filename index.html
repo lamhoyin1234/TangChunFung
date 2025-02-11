@@ -17,7 +17,7 @@
 <body>
   <script type="module">
     // Import the functions you need from the SDKs you need
-    import { initializeApp, database } from 'https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js'
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js'
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
     import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-database.js"
@@ -96,15 +96,12 @@
           companyName: "DefaultCompany",
           productName: "TangChunFungTomb",
           productVersion: "1.0",
-          // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-          // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
         };
         var canvas = document.querySelector("#unity-canvas");
         var progressBarFull = document.querySelector("#unity-progress-bar-full");
         var loadingBar = document.querySelector("#unity-loading-bar");
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-          // Mobile device style: fill the whole browser client area with the game canvas:
           var meta = document.createElement('meta');
           meta.name = 'viewport';
           meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
@@ -114,32 +111,19 @@
           canvas.style.height = "100%";
           canvas.style.position = "fixed";
           document.body.style.textAlign = "left";
-          setTimeout(() => {
-          }, 5000);
+          setTimeout(() => {}, 5000);
         } else {
           canvas.style.width = "100%";
           canvas.style.height = "100%";
         }
         loadingBar.style.display = "block";
 
-        var config = {
-          dataUrl: "unity/Build/unity.data",
-          frameworkUrl: "unity/Build/unity.framework.js",
-          codeUrl: "unity/Build/unity.wasm",
-          streamingAssetsUrl: "unity/StreamingAssets",
-          companyName: "DefaultCompany",
-          productName: "TangChunFungTomb",
-          productVersion: "1.0",
-          // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-          // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-        };
         var script = document.createElement("script");
         script.src = "unity/Build/unity.loader.js";
         script.onload = () => {
           createUnityInstance(canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
-            // This is needed to make the Unity Firebase WebGL Library work properly
             this.unityInstance = unityInstance;
             loadingBar.style.display = "none";
             this.unityInstance.SendMessage("firebase", "unityInstanceOK");
