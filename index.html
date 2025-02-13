@@ -125,7 +125,7 @@
           }).then((unityInstance) => {
             this.unityInstance = unityInstance;
             loadingBar.style.display = "none";
-            //this.unityInstance.SendMessage("firebase", "unityInstanceOK");
+            this.unityInstance.SendMessage("firebase", "unityInstanceOK");
           }).catch((message) => {
             alert(message);
           });
