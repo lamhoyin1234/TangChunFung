@@ -15,7 +15,8 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
-const database = getDatabase(firebase);
+const database=firebase.firestore();
+//const database = getDatabase(firebase);
 alert("Firebase: " + firebase.name + " and db: " + database.name);
 database = getDatabase();
 

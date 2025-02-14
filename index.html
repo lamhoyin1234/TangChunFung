@@ -12,6 +12,8 @@
   <script src="js/app.js"></script>
   <script type="module" defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js"></script>
   <script type="module" defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js"></script>
+  <script type="module" defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
+  <script type="module" defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
   <script type="module" defer src="js/firebase.js"></script>
   <noscript>You need to enable JavaScript to view the full site.</noscript>
   <title data-i18n="title"></title>
@@ -106,7 +108,6 @@
           }).then((unityInstance) => {
             this.unityInstance = unityInstance;
             loadingBar.style.display = "none";
-            alert("Firebase: " + firebase.name + " and db: " + database.name);
             this.unityInstance.SendMessage("firebase", "unityInstanceOK");
           }).catch((message) => {
             alert(message);
