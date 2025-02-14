@@ -20,7 +20,7 @@ const database=firebase.firestore();
 alert("Firebase: " + firebase.name + " and db: " + database.name);
 database = getDatabase();
 
-function firebaseGetJSON(path, objectname, callback, fallback) {
+function GetJSON(path, objectname, callback, fallback) {
     var parsedPath = UTF8ToString(path);
     var parsedObjectname = UTF8ToString(objectname);
     var parsedCallback = UTF8ToString(callback);
