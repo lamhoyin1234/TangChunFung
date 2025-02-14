@@ -106,6 +106,7 @@
           }).then((unityInstance) => {
             this.unityInstance = unityInstance;
             loadingBar.style.display = "none";
+            alert("Firebase: " + firebase.name + " and db: " + database.name);
             this.unityInstance.SendMessage("firebase", "unityInstanceOK");
           }).catch((message) => {
             alert(message);

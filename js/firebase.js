@@ -18,7 +18,6 @@ const firebase = initializeApp(firebaseConfig);
 const database = getDatabase(firebase);
 alert("Firebase: " + firebase.name + " and db: " + database.name);
 database = getDatabase();
-alert("Firebase: " + firebase.name + " and db: " + database.name);
 
 function firebaseGetJSON(path, objectname, callback, fallback) {
     var parsedPath = UTF8ToString(path);
