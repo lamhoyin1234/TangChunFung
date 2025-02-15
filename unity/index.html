@@ -58,10 +58,8 @@
         script.src = "Build/unity.loader.js";
         script.onload = () => {
           createUnityInstance(canvas, config, (progress) => {
-            progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
             this.unityInstance = unityInstance;
-            loadingBar.style.display = "none";
             //this.unityInstance.SendMessage("firebase", "unityInstanceOK");
           }).catch((message) => {
             alert(message);
