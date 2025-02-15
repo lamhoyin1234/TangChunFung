@@ -30,7 +30,6 @@
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-functions.js"></script>
@@ -54,11 +53,11 @@
 
   <script>
     var buildUrl = "Build";
-    var loaderUrl = buildUrl + "/FirebaseWebGL.loader.js";
+    var loaderUrl = buildUrl + "/unity.loader.js";
     var config = {
-      dataUrl: buildUrl + "/FirebaseWebGL.data",
-      frameworkUrl: buildUrl + "/FirebaseWebGL.framework.js",
-      codeUrl: buildUrl + "/FirebaseWebGL.wasm",
+      dataUrl: buildUrl + "/unity.data",
+      frameworkUrl: buildUrl + "/unity.framework.js",
+      codeUrl: buildUrl + "/unity.wasm",
       streamingAssetsUrl: "StreamingAssets",
       companyName: "DefaultCompany",
       productName: "WebGL Firebase Test",
