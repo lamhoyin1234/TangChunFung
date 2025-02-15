@@ -6,6 +6,28 @@
     <title>Unity Web Player | TangChunFungTomb</title>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js"
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+    
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyA_2yd3_KIu23n2qDnL4McPL51qBqhTD-w",
+        authDomain: "sample-8e49f.firebaseapp.com",
+        databaseURL: "https://sample-8e49f-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "sample-8e49f",
+        storageBucket: "sample-8e49f.firebasestorage.app",
+        messagingSenderId: "57010539033",
+        appId: "1:57010539033:web:eca0a64a97e954c0f7f888"
+      };
+    
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+    </script>
     <canvas id="unity-canvas" width=960 height=600 tabindex="-1" style="width: 960px; height: 600px; background: #231F20"></canvas>
     <script src="Build/unity.loader.js"></script>
     <script>
@@ -23,19 +45,28 @@
 
         document.body.style.textAlign = "left";
       }
-
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        arguments: [],
-        dataUrl: "Build/unity.data",
-        frameworkUrl: "Build/unity.framework.js",
-        codeUrl: "Build/unity.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "TangChunFungTomb",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
+        var config = {
+          dataUrl: "Build/unity.data",
+          frameworkUrl: "Build/unity.framework.js",
+          codeUrl: "Build/unity.wasm",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "DefaultCompany",
+          productName: "TangChunFungTomb",
+          productVersion: "1.0",
+        };
+      var script = document.createElement("script");
+        script.src = "Build/unity.loader.js";
+        script.onload = () => {
+          createUnityInstance(canvas, config, (progress) => {
+            progressBarFull.style.width = 100 * progress + "%";
+          }).then((unityInstance) => {
+            this.unityInstance = unityInstance;
+            loadingBar.style.display = "none";
+            //this.unityInstance.SendMessage("firebase", "unityInstanceOK");
+          }).catch((message) => {
+            alert(message);
+          });
+        };
     </script>
   </body>
 </html>
