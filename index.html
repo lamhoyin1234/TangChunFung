@@ -10,11 +10,6 @@
   <link rel="shortcut icon" href="img/favicon.ico">
   <script src='js/jquery.js'></script>
   <script src="js/app.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app-compat.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore-compat.js"></script>
-  <script type="module" src="js/firebase.js"></script>
   <noscript>You need to enable JavaScript to view the full site.</noscript>
   <title data-i18n="title"></title>
 </head>
@@ -62,62 +57,96 @@
       <h1>foobar</h1>
     </section>
     <section id="spirit_tablet" class="timeline">
-      <canvas id="unity-canvas" width=100% height=100% tabindex="-1"
-        style="width: 100%; height: 100%; background: #231F20"></canvas>
-      <div id="unity-loading-bar">
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas"></canvas>
+    <div id="unity-loading-bar">
+      <div id="unity-logo"></div>
+      <div id="unity-progress-bar-empty">
         <div id="unity-progress-bar-full"></div>
       </div>
-      <script>
-        var buildUrl = "Build";
-        var loaderUrl = buildUrl + "/FirebaseWebGL.loader.js";
-        var config = {
-          dataUrl: "unity/Build/unity.data",
-          frameworkUrl: "unity/Build/unity.framework.js",
-          codeUrl: "unity/Build/unity.wasm",
-          streamingAssetsUrl: "unity/StreamingAssets",
+    </div>
+    <div id="unity-mobile-warning">
+      WebGL builds are not supported on mobile devices.
+    </div>
+    <div id="unity-footer">
+      <div id="unity-webgl-logo"></div>
+      <div id="unity-fullscreen-button"></div>
+      <div id="unity-build-title">FirebaseWebGLImplementation</div>
+    </div>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyA_2yd3_KIu23n2qDnL4McPL51qBqhTD-w",
+      authDomain: "sample-8e49f.firebaseapp.com",
+      databaseURL: "https://sample-8e49f-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "sample-8e49f",
+      storageBucket: "sample-8e49f.firebasestorage.app",
+      messagingSenderId: "57010539033",
+      appId: "1:57010539033:web:eca0a64a97e954c0f7f888"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script>
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/unity.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/unity.data",
+      frameworkUrl: buildUrl + "/unity.framework.js",
+      codeUrl: buildUrl + "/unity.wasm",
+      streamingAssetsUrl: "StreamingAssets",
           companyName: "DefaultCompany",
           productName: "TangChunFungTomb",
           productVersion: "1.0",
-        };
-        var canvas = document.querySelector("#unity-canvas");
-        var progressBarFull = document.querySelector("#unity-progress-bar-full");
-        var loadingBar = document.querySelector("#unity-loading-bar");
+    };
 
-        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-          var meta = document.createElement('meta');
-          meta.name = 'viewport';
-          meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-          document.getElementsByTagName('head')[0].appendChild(meta);
-          config.devicePixelRatio = 1;
-          canvas.style.width = "100%";
-          canvas.style.height = "100%";
-          canvas.style.position = "fixed";
-          document.body.style.textAlign = "left";
-          setTimeout(() => { }, 5000);
-        } else {
-          canvas.style.width = "100%";
-          canvas.style.height = "100%";
-        }
-        loadingBar.style.display = "block";
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var loadingBar = document.querySelector("#unity-loading-bar");
+    var progressBarFull = document.querySelector("#unity-progress-bar-full");
+    var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+    var mobileWarning = document.querySelector("#unity-mobile-warning");
 
-        var script = document.createElement("script");
-        script.src = "unity/Build/unity.loader.js";
-        script.onload = () => {
-          createUnityInstance(canvas, config, (progress) => {
-            progressBarFull.style.width = 100 * progress + "%";
-          }).then((unityInstance) => {
-            this.unityInstance = unityInstance;
-            loadingBar.style.display = "none";
-            //this.unityInstance.SendMessage("firebase", "unityInstanceOK");
-          }).catch((message) => {
-            alert(message);
-          });
-        };
-        document.body.appendChild(script);
-      </script>
-    </section>
-  </content>
+    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+      container.className = "unity-mobile";
+      config.devicePixelRatio = 1;
+      mobileWarning.style.display = "block";
+      setTimeout(() => {
+        mobileWarning.style.display = "none";
+      }, 5000);
+    } else {
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
+    }
+    loadingBar.style.display = "block";
 
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      createUnityInstance(canvas, config, (progress) => {
+        progressBarFull.style.width = 100 * progress + "%";
+      }).then((unityInstance) => {
+        // This is needed to make the Unity Firebase WebGL Library work properly
+        this.unityInstance = unityInstance;
+        loadingBar.style.display = "none";
+        this.unityInstance.SendMessage("ExampleHandler", "GetJSON");
+      }).catch((message) => {
+        alert(message);
+      });
+    };
+    document.body.appendChild(script);
+  </script>
 </body>
 
 </html>
