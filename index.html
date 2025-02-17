@@ -7,7 +7,6 @@
   <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="img/favicon.ico">
   <script src='js/jquery.js'></script>
   <script src="js/app.js"></script>
   <noscript>You need to enable JavaScript to view the full site.</noscript>
@@ -111,21 +110,19 @@
           productVersion: "1.0",
         };
 
-        var container = document.querySelector("#unity-container");
         var canvas = document.querySelector("#unity-canvas");
         var loadingBar = document.querySelector("#unity-loading-bar");
         var progressBarFull = document.querySelector("#unity-progress-bar-full");
-        var fullscreenButton = document.querySelector("#unity-fullscreen-button");
         var mobileWarning = document.querySelector("#unity-mobile-warning");
 
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-          container.className = "unity-mobile";
           config.devicePixelRatio = 1;
           mobileWarning.style.display = "block";
           setTimeout(() => {
             mobileWarning.style.display = "none";
           }, 5000);
         } else {
+          mobileWarning.style.display = "none";
           canvas.style.width = "100%";
           canvas.style.height = "100%";
         }
