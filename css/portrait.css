@@ -13,6 +13,14 @@ h1 {
   padding: 0;
 }
 
+header {
+  position: fixed;
+  top: 0px;
+  height: 90vh;
+  width: 100vw;
+  z-index: 1000;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -58,13 +66,6 @@ section {
   background-color: lightgreen;
 }
 
-header {
-  position: fixed;
-  top: 0px;
-  height: 15vh;
-  width: 100vw;
-  z-index: 1000;
-}
 
 content {
   /*margin-top: 30px;*/
@@ -82,7 +83,7 @@ nav {
   padding: 0;
   position: absolute;
   left: 1vw;
-  right: 50vw;
+  right: 30vw;
   /*transform: translate(-50%, -50%);*/
   display: flex;
   flex-direction: column;
