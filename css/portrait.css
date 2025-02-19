@@ -13,17 +13,10 @@ h1 {
   padding: 0;
 }
 
-div {
-  width: fit-content;
-  height: fit-content;
-}
-
 header {
   position: fixed;
   top: 0px;
-  height: 80vh;
   height: calc(var(--vh, 1vh) * 80);
-  width: 100vw;
   width: calc(var(--vw, 1vw) * 100);
   z-index: 1000;
 }
@@ -36,9 +29,7 @@ header {
   margin: 0;
   padding: 0;
   position: relative;
-  top: 3vh; /* Adjusted for portrait */
   top: calc(var(--vh, 1vh) * 3);
-  bottom:80vh; /* Adjusted for portrait */
   bottom: calc(var(--vh, 1vh) * 80);
   img{
     object-fit: contain;
