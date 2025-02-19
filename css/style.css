@@ -29,9 +29,8 @@ header {
   margin: 0;
   padding: 0;
   position: relative;
-  left: 40vw;
-  right: 40vw;
   top: 5vw;
+  bottom:80vw;
   img{
     object-fit: contain;
   }
