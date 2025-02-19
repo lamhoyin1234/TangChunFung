@@ -1,6 +1,6 @@
 const cssFile = getComputedStyle(document.documentElement);
 const timelineTranslateXValue = cssFile.getPropertyValue('--timelineTranslateXValue').trim();
-
+/*
 function vh(percent) {
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   return (percent * h) / 100;
@@ -10,6 +10,11 @@ function vw(percent) {
   var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
   return (percent * w) / 100;
 }
+*/
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+let vw = window.innerWidth * 0.01;
+document.documentElement.style.setProperty('--vw', `${vw}px`);
 
 $(document).on("scroll", function () {
   var pageTop = $(document).scrollTop();
@@ -25,6 +30,14 @@ $(document).on("scroll", function () {
       $(tag).removeClass("visible");
     }
   }
+});
+
+window.addEventListener('resize', () => {
+  // We execute the same script as before
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  let vw = window.innerWidth * 0.01;
+  document.documentElement.style.setProperty('--vw', `${vw}px`);
 });
 
 //multi lang function

@@ -16,8 +16,10 @@ h1 {
 header {
   position: fixed;
   top: 0px;
-  height: 90%;
+  height: 90vh;
+  height: calc(var(--vh, 1vh) * 90);
   width: 100vw;
+  width: calc(var(--vw, 1vw) * 100);
   z-index: 1000;
 }
 
@@ -29,8 +31,10 @@ header {
   margin: 0;
   padding: 0;
   position: relative;
-  top: 3vw;
-  bottom:80vw;
+  top: 3vh;
+  top: calc(var(--vh, 1vh) * 3);
+  bottom:80vh;
+  bottom: calc(var(--vw, 1vw) * 80);
   img{
     object-fit: contain;
   }
