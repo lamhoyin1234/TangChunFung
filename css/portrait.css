@@ -21,6 +21,22 @@ header {
   z-index: 1000;
 }
 
+#iconImage{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 40vw;
+  right: 40vw;
+  top: 10vw;
+  img{
+    object-fit: contain;
+  }
+}
+
 body {
   font-family: sans-serif;
 }
