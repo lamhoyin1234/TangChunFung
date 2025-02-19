@@ -13,6 +13,17 @@ h1 {
   padding: 0;
 }
 
+.dynamic {
+  container: dynamic/inline-size;
+  overflow: hidden;
+  resize: horizontal;
+
+  h1 {
+    font-size: 10cqw;
+    line-height: 1em;
+  }
+}
+
 body {
   font-family: sans-serif;
 }
