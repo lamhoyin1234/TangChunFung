@@ -21,23 +21,14 @@ header {
   z-index: 1000;
 }
 .left{
-  align-self: center;
-  float:left;
-  position: relative;
-  right: 50vw;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 .right{
-  align-self: center;
-  float:right;
-  position: relative;
-  left: 50vw;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  display: grid;
+  align-items: center; 
 }
 
 #iconImage{
