@@ -12,6 +12,13 @@ h1 {
   margin: 0;
   padding: 0;
 }
+header {
+  position: fixed;
+  top: 0px;
+  height: 90vh;
+  width: 100vw;
+  z-index: 1000;
+}
 
 body {
   font-family: sans-serif;
@@ -58,13 +65,6 @@ section {
   background-color: lightgrey;
 }
 
-header {
-  position: fixed;
-  top: 0px;
-  height: 7.5vh;
-  width: 100vw;
-  z-index: 1000;
-}
 
 content {
   /*margin-top: 30px;*/
