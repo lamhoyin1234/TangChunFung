@@ -57,26 +57,38 @@
     </div>
     <div id="biography" class="section timeline">
       <h1 data-i18n="biography"></h1>
-      <div class="left">
-        <img src="img/football.jpg">
-        <p class="right" data-i18n="biography-football"></p>
+      <div style="width:100%;">
+        <div style="width:50%; float:left;">
+          <img src="img/football.jpg">
+        </div>
+        <div style="width:50%; float:left;">
+          <p data-i18n="biography-football"></p>
+        </div>
       </div>
     </div>
     <div class="section timeline yellow">
-      <img src="img/movie.png">
-      <p data-i18n="biography-movie"></p>
+      <div class="left">
+        <img src="img/movie.png">
+        <p data-i18n="biography-movie"></p>
+      </div>
     </div>
     <div class="section timeline yellow">
-      <img src="img/japan-solo.jpg">
-      <p data-i18n="biography-japan-solo"></p>
+      <div class="left">
+        <img src="img/japan-solo.jpg">
+        <p data-i18n="biography-japan-solo"></p>
+      </div>
     </div>
     <div class="section timeline yellow">
-      <img src="img/japan-food.png">
-      <p data-i18n="biography-japan-food"></p>
+      <div class="left">
+        <img src="img/japan-food.png">
+        <p data-i18n="biography-japan-food"></p>
+      </div>
     </div>
     <div class="section timeline yellow">
-      <img src="img/girlfriend.jpg">
-      <p data-i18n="biography-girlfriend"></p>
+      <div class="left">
+        <img src="img/girlfriend.jpg">
+        <p data-i18n="biography-girlfriend"></p>
+      </div>
     </div>
     <div id="spirit_tablet" class="timeline section">
       <canvas id="unity-canvas"></canvas>
@@ -144,7 +156,7 @@
             // This is needed to make the Unity Firebase WebGL Library work properly
             this.unityInstance = unityInstance;
             loadingBar.style.display = "none";
-            this.unityInstance.SendMessage("ExampleHandler", "ChangeLang", lang);
+            this.unityInstance.SendMessage("ExampleHandler", "SendLang");
             this.unityInstance.SendMessage("ExampleHandler", "GetJSON");
           }).catch((message) => {
             alert(message);

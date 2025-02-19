@@ -1,6 +1,6 @@
 const cssFile = getComputedStyle(document.documentElement);
 const timelineTranslateXValue = cssFile.getPropertyValue('--timelineTranslateXValue').trim();
-var lang="en";
+let lang="en";
 /*
 function vh(percent) {
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
