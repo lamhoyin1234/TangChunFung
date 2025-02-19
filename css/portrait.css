@@ -78,6 +78,8 @@ h1 {
     width: auto;
     height: auto;
   }
+}.section {
+  height: 500vh;
 }
 
 .blue {
