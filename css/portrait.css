@@ -72,14 +72,13 @@ h1 {
 }
 
 #biography {
+  height: 100vh;
   background-color: lightcoral;
   img{
     object-fit: contain;
     width: auto;
     height: auto;
   }
-}.section {
-  height: 500vh;
 }
 
 .blue {
