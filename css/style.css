@@ -18,7 +18,7 @@ h1 {
   overflow: hidden;
   resize: horizontal;
 
-  h1 {
+  button {
     font-size: 10cqw;
     line-height: 1em;
   }
