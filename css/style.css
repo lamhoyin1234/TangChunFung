@@ -20,8 +20,8 @@ header {
   width: calc(var(--vw, 1vw) * 100);
   z-index: 1000;
 }
-
 .left{
+  float:left;
   position: relative;
   right: 50vw;
   left: 0;
@@ -30,6 +30,7 @@ header {
 }
 
 .right{
+  float:right;
   position: relative;
   left: 50vw;
   right: 0;
