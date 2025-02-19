@@ -13,6 +13,11 @@ h1 {
   padding: 0;
 }
 
+div {
+  width: fit-content;
+  height: fit-content;
+}
+
 header {
   position: fixed;
   top: 0px;
