@@ -28,10 +28,10 @@ header {
   list-style: none;
   margin: 0;
   padding: 0;
-  position: absolute;
+  position: relative;
   left: 40vw;
   right: 40vw;
-  top: 10vw;
+  top: 5vw;
   img{
     object-fit: contain;
   }
