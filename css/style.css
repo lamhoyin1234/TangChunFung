@@ -145,6 +145,7 @@ button {
     font-size: 0.9vw;
     font-weight: 600;
     transition: .5s;
+    object-fit: contain;
 
     &:before {
       content: '';
