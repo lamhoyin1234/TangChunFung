@@ -21,6 +21,7 @@ header {
   z-index: 1000;
 }
 .left{
+  align-self: center;
   float:left;
   position: relative;
   right: 50vw;
@@ -30,6 +31,7 @@ header {
 }
 
 .right{
+  align-self: center;
   float:right;
   position: relative;
   left: 50vw;
