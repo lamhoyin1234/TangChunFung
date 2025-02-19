@@ -56,22 +56,19 @@
     <div id="biography" class="section timeline">
       <h1 data-i18n="biography"></h1>
       <img src="img/football.jpg">
-      <p data-i18n="biography-content"></p>
+      <p data-i18n="biography-football"></p>
+      <p data-i18n="biography-movie"></p>
+      <p data-i18n="biography-japan-solo"></p>
+      <p data-i18n="biography-food"></p>
+      <p data-i18n="biography-girlfriend"></p>
     </div>
-    <section class="timeline blue">
-      <h1 data-i18n="biography"></h1>
-      <p data-i18n="biography-content-2"></p>
-    </section>
-    <section id="spirit_tablet" class="timeline">
+    <div id="spirit_tablet" class="timeline section">
       <canvas id="unity-canvas"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
-      </div>
-      <div id="unity-mobile-warning">
-        WebGL builds are not supported on mobile devices.
       </div>
 
       <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -113,17 +110,12 @@
         var canvas = document.querySelector("#unity-canvas");
         var loadingBar = document.querySelector("#unity-loading-bar");
         var progressBarFull = document.querySelector("#unity-progress-bar-full");
-        var mobileWarning = document.querySelector("#unity-mobile-warning");
         canvas.style.width = "100%";
         canvas.style.height = "100%";
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
           config.devicePixelRatio = 1;
-          //mobileWarning.style.display = "block";
-          //setTimeout(() => {
-          mobileWarning.style.display = "none";
-          //}, 5000);
         } else {
-          mobileWarning.style.display = "none";
+          //non mobile device
         }
         loadingBar.style.display = "block";
 
@@ -143,7 +135,7 @@
         };
         document.body.appendChild(script);
       </script>
-    </section>
+    </div>
   </content>
 </body>
 
