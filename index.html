@@ -141,21 +141,6 @@
       </script>
     </section>
   </content>
-  <script>
-    var iframeElement = document.getElementById("spirit_tablet").contentWindow;
-    iframeElement.addEventListener("wheel", ScrollingY, true);
-
-    // manually scrolling iframe parent window
-    // event.deltaY —> amount of lines to scroll as provided by OS
-    // single line size in pixels —> usually the default font size of 16
-    function ScrollingY(event) {
-      window.scrollBy({
-        top: event.deltaY * 16,
-        left: 0,
-        behavior: 'smooth'
-      });
-    }
-  </script>
 </body>
 
 </html>

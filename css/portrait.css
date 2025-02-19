@@ -16,7 +16,7 @@ h1 {
 header {
   position: fixed;
   top: 0px;
-  height: 90vh;
+  height: 90%;
   width: 100vw;
   z-index: 1000;
 }
