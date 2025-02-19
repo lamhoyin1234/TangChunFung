@@ -115,7 +115,7 @@ function scrollTo(id) {
     $('html,body').animate({ scrollTop: $("#" + id).offset().top }, 'slow');
   }
   else {
-    $('html,body').animate({ scrollTop: $("#" + id).offset().top - vh(10) }, 'slow');
+    $('html,body').animate({ scrollTop: $("#" + id).offset().top - 10 * vh /*vh(10)*/ }, 'slow');
   }
 }
 
