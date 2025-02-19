@@ -41,25 +41,31 @@
     </langList>
   </header>
   <content>
-    <div  id="homepage" class="section">
+    <div id="homepage" class="section">
       <h1 data-i18n="title"></h1>
       <center>
         <div id="iconImage">
           <img src="img/newicon.png">
         </div>
-        <h2 data-i18n="name"></h2>
-        <h3 data-i18n="born"></h3>
-        <h3 data-i18n="died"></h3>
-        <p data-i18n="description"></p>
+        <div>
+          <h2 data-i18n="name"></h2>
+          <h3 data-i18n="born"></h3>
+          <h3 data-i18n="died"></h3>
+          <p data-i18n="description"></p>
+        </div>
       </center>
     </div>
     <div id="biography" class="section timeline">
       <h1 data-i18n="biography"></h1>
       <img src="img/football.jpg">
       <p data-i18n="biography-football"></p>
+      <img src="img/movie.png">
       <p data-i18n="biography-movie"></p>
+      <img src="img/japan-solo.jpg">
       <p data-i18n="biography-japan-solo"></p>
+      <img src="img/japan-food.png">
       <p data-i18n="biography-food"></p>
+      <img src="img/girlfriend.jpg">
       <p data-i18n="biography-girlfriend"></p>
     </div>
     <div id="spirit_tablet" class="timeline section">
@@ -128,6 +134,7 @@
             // This is needed to make the Unity Firebase WebGL Library work properly
             this.unityInstance = unityInstance;
             loadingBar.style.display = "none";
+            this.unityInstance.SendMessage("ExampleHandler", "ChangeLang", lang);
             this.unityInstance.SendMessage("ExampleHandler", "GetJSON");
           }).catch((message) => {
             alert(message);

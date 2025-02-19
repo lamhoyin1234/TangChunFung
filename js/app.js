@@ -1,5 +1,6 @@
 const cssFile = getComputedStyle(document.documentElement);
 const timelineTranslateXValue = cssFile.getPropertyValue('--timelineTranslateXValue').trim();
+var lang="en";
 /*
 function vh(percent) {
   var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
@@ -18,7 +19,8 @@ document.documentElement.style.setProperty('--vw', `${vw}px`);
 
 $(document).on("scroll", function () {
   var pageTop = $(document).scrollTop();
-  var pageBottom = pageTop + $(window).height();
+  //var pageBottom = pageTop + $(window).height();
+  var pageBottom = pageTop + $(window).innerHeight();
   var tags = $(".timeline");
 
   for (var i = 0; i < tags.length; i++) {
@@ -71,9 +73,10 @@ function updateContent(langData) {
 }
 
 // Function to change language
-async function changeLanguage(lang) {
-  await setLanguagePreference(lang);
-  const langData = await fetchLanguageData(lang);
+async function changeLanguage(mlang) {
+  lang = mlang;
+  await setLanguagePreference(mlang);
+  const langData = await fetchLanguageData(mlang);
   updateContent(langData);
   //
   //optional: some lang had different orientation(read from right to left)

@@ -75,6 +75,9 @@ h1 {
 
 #biography {
   background-color: lightcoral;
+  img{
+    object-fit: contain;
+  }
 }
 
 .blue {
