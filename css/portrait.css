@@ -21,6 +21,14 @@ header {
   z-index: 1000;
 }
 
+img {
+  max-width: 100vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
 #iconImage {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -57,20 +65,7 @@ h1 {
 }
 
 .timeline {
-  opacity: 0;
-  transform: translate(0, var(--timelineTranslateXValue));
-  transition: all 1.0s;
-}
-
-.timeline.visible {
-  opacity: 0;
-  transform: translate(0, var(--timelineTranslateXValue));
-  transition: all 1.0s;
-}
-
-.timeline.visible {
   opacity: 1;
-  transform: translate(0, 0);
 }
 
 .yellow {
@@ -210,6 +205,15 @@ button {
     }
   }
 }
+.section.timeline.yellow .right,
+.section.timeline.yellow .left {
+  display: flex;
+  flex-direction: column;
+}
+
+.section.timeline.yellow .right p {
+  order: -1;
+}
 
 /*end lang button style*/
 
@@ -221,8 +225,7 @@ button {
     flex-direction: column;
   }
 
-  .section.timeline.yellow .right p,
-  .section.timeline.yellow .left p {
+  .section.timeline.yellow .right p {
     order: -1;
   }
 }
