@@ -207,27 +207,14 @@ button {
     }
   }
 }
+/*end lang button style*/
+
 .section.timeline.yellow .right,
 .section.timeline.yellow .left {
   display: flex;
   flex-direction: column;
 }
-
-.section.timeline.yellow .right p {
+.section.timeline.yellow .right p,
+.section.timeline.yellow .left p {
   order: -1;
-}
-
-/*end lang button style*/
-
-@media screen and (max-device-width: 700px) {
-
-  .section.timeline.yellow .right,
-  .section.timeline.yellow .left {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .section.timeline.yellow .right p {
-    order: -1;
-  }
 }
