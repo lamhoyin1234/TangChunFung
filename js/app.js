@@ -83,6 +83,10 @@ async function changeLanguage(mlang) {
   //toggleArabicStylesheet(lang); // Toggle Arabic stylesheet
 }
 
+function changeUnityLanguage(){
+  this.unityInstance.SendMessage("ExampleHandler", "ChangeLang",lang);
+}
+
 // Function to toggle Arabic stylesheet based on language selection
 /*
 function toggleArabicStylesheet(lang) {
