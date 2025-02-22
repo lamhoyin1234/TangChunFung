@@ -59,12 +59,11 @@ h1 {
 }
 
 .section {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 #homepage {
   background-color: grey;
-  height: 200vh;
 }
 
 .timeline {
@@ -84,7 +83,7 @@ h1 {
 }
 
 #biography {
-  height: 100vh;
+  min-height: 100vh;
   background-color: lightyellow;
 
   img {
