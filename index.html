@@ -55,7 +55,7 @@
         </div>
       </center>
     </div>
-    <div id="biography" class="section timeline yellow">
+    <div id="biography" class="section timeline">
       <h1 data-i18n="biography"></h1>
       <div class="left">
         <img src="img/football.jpg">
@@ -162,7 +162,7 @@
             // This is needed to make the Unity Firebase WebGL Library work properly
             this.unityInstance = unityInstance;
             loadingBar.style.display = "none";
-            changeUnityLanguage();
+            //changeUnityLanguage();
             this.unityInstance.SendMessage("ExampleHandler", "GetJSON");
           }).catch((message) => {
             alert(message);

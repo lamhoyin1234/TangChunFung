@@ -116,6 +116,7 @@ h1 {
 }
 
 #biography {
+  background-color: lightyellow;
   img {
     object-fit: contain;
     width: auto;
