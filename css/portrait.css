@@ -39,11 +39,11 @@ img {
   position: relative;
   top: 3%;
   bottom: 80%;
-  height: auto;
-  max-height: 20%;
 
   img {
     object-fit: contain;
+    height: auto;
+    max-height: 20%;
   }
 }
 

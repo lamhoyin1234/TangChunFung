@@ -31,11 +31,11 @@ header {
   position: relative;
   top: calc(var(--vh, 1vh) * 3);
   bottom: calc(var(--vw, 1vw) * 80);
-  height: auto;
-  max-height: 20%;
 
   img {
     object-fit: contain;
+    height: auto;
+    max-height: 20%;
   }
 }
 
