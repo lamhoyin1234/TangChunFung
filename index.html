@@ -161,7 +161,7 @@
             // This is needed to make the Unity Firebase WebGL Library work properly
             this.unityInstance = unityInstance;
             loadingBar.style.display = "none";
-            this.unityInstance.SendMessage("ExampleHandler", "SendLang");
+            this.unityInstance.SendMessage("ExampleHandler", "ChangeLang",lang);
             this.unityInstance.SendMessage("ExampleHandler", "GetJSON");
           }).catch((message) => {
             alert(message);
