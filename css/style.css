@@ -93,6 +93,7 @@ h1 {
 
 #homepage {
   background-color: grey;
+  min-height: 100vh;
 }
 
 .timeline {
@@ -130,6 +131,7 @@ h1 {
 
 #spirit_tablet {
   background-color: lightgrey;
+  min-height: 100vh;
 }
 
 
