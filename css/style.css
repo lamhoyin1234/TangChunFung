@@ -89,11 +89,13 @@ h1 {
 
 .section {
   min-height: 100vh;
+  height: 100vh;
 }
 
 #homepage {
   background-color: grey;
   min-height: 100vh;
+  height: 100vh;
 }
 
 .timeline {
@@ -110,6 +112,8 @@ h1 {
 .yellow {
   background-color: lightyellow;
   display: flex;
+  min-height: 100vh;
+  height: 100vh;
 }
 
 .yellow .left, .yellow .right {
@@ -132,6 +136,7 @@ h1 {
 #spirit_tablet {
   background-color: lightgrey;
   min-height: 100vh;
+  height: 100vh;
 }
 
 
