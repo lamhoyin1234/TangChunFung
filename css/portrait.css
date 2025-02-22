@@ -37,8 +37,8 @@ img {
   margin: 0;
   padding: 0;
   position: relative;
-  top: calc(var(--vh, 1vh) * 3);
-  bottom: calc(var(--vh, 1vh) * 80);
+  top: 3%;
+  bottom: 80%;
 
   img {
     object-fit: contain;

@@ -29,9 +29,7 @@ header {
   margin: 0;
   padding: 0;
   position: relative;
-  top: 3vh;
   top: calc(var(--vh, 1vh) * 3);
-  bottom: 80vh;
   bottom: calc(var(--vw, 1vw) * 80);
 
   img {
